@@ -1,0 +1,72 @@
+repeat task.wait() until game:IsLoaded()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/joeengo/exploiting/main/EngoUILIB_V2.lua", true))()
+
+--welcome player 
+game.StarterGui:SetCore("SendNotification", {
+Title = "You're Whitelisted!";
+Text = "Enjoy!";
+Duration = math.huge;
+Button1 = "Okay"
+})
+
+--gui
+local main = library:CreateMain("CoughbIood Assassin Script", "June 2023 Version", Enum.KeyCode.LeftAlt)
+
+--main
+local tab = main:CreateTab("Main")
+
+--scripts for main
+tab:CreateToggle("SpeedWalk", function(value)
+    if value then
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 33
+    else
+     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+   end
+   end)
+   
+tab:CreateToggle("JumpPower", function(value)
+    if value then
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+    else
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+   end
+end)
+
+--ESP
+local tab = main:CreateTab("ESP")
+
+tab:CreateButton("ESP", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Matthew0516/unnamed-esp/main/Cranky%20Hub", true))()
+end)
+
+--misc
+local tab = main:CreateTab("Misc")
+
+tab:CreateButton("Server Hop", function()
+     game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+     end)
+
+tab:CreateButton("Force reset/Auto criminal", function()
+    plr = game:GetService("Players").LocalPlayer
+    plr.Character:Destroy()
+end)
+
+tab:CreateButton("Silent Aim", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Matthew0516/Silent-Aim/main/Assassin", true))()
+     end)
+
+--credits
+local tab = main:CreateTab("Credits")
+
+tab:CreateLabel("Owner of this script : cranky#3929")
+
+tab:CreateButton("Copy discord", function()
+
+setclipboard("cranky#3929")
+game.StarterGui:SetCore("SendNotification", {
+Title = "Discord Copied!";
+Text = "Thanks for using my script! "..game.Players.LocalPlayer.Name;
+Duration = math.huge;
+Button1 = "Okay"
+})
+end)
