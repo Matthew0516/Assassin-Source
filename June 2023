@@ -46,7 +46,7 @@ tab:CreateButton("Server Hop", function()
      game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
      end)
 
-tab:CreateButton("Force reset/Auto criminal", function()
+tab:CreateButton("Rejoin", function()
     plr = game:GetService("Players").LocalPlayer
     plr.Character:Destroy()
 end)
